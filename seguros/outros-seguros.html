@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Outros Seguros — RUMOSEG Corretora de Seguros</title>
+  <meta name="description" content="Além dos produtos mais conhecidos, a RUMOSEG oferece acesso a uma ampla gama de soluções para cobrir situações específicas do seu dia a dia,"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#1B2E6B;--navy-dark:#0D1A3E;--gold:#C9A84C;--gold-light:#E2C06E;
+      --gold-pale:#F7F0E0;--cream:#FAFAF7;--off-white:#F4F4F0;
+      --gray:#6B7280;--light-gray:#E5E5E0;--white:#FFFFFF;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'Inter',system-ui,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-sans);color:#1a1a2e;background:var(--white);overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);
+      backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;
+      justify-content:space-between;height:88px;border-bottom:1px solid var(--light-gray);
+      box-shadow:0 1px 20px rgba(27,46,107,0.06);overflow:visible}
+    .nav-logo{display:flex;align-items:center;height:100%;overflow:visible}
+    .nav-logo img{height:100px;width:auto;object-fit:contain;display:block}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{color:var(--gray);text-decoration:none;font-size:13px;font-weight:500;
+      transition:color .2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;
+      height:2px;background:var(--gold);transform:scaleX(0);transition:transform .2s;transform-origin:left}
+    .nav-links a:hover{color:var(--navy)}
+    .nav-links a:hover::after{transform:scaleX(1)}
+    .nav-cta{background:var(--navy);color:white!important;padding:8px 20px;border-radius:4px;
+      font-weight:600!important;transition:background .2s!important}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--gold)!important;color:var(--navy-dark)!important}
+
+    /* HERO */
+    .hero{min-height:52vh;background:var(--navy-dark);display:flex;flex-direction:column;
+      justify-content:center;padding:120px 8% 72px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+      width:500px;height:500px;border:1px solid rgba(201,168,76,0.08);border-radius:50%}
+    .hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+    .hero-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s}
+    .hero-breadcrumb a:hover{color:var(--gold)}
+    .hero-breadcrumb span{color:rgba(255,255,255,0.3);font-size:13px}
+    .hero-breadcrumb strong{color:var(--gold);font-size:13px;font-weight:500}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;
+      background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);
+      color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+      padding:5px 14px;border-radius:20px;margin-bottom:20px;width:fit-content}
+    .hero h1{font-family:var(--font-serif);font-size:clamp(32px,4.5vw,58px);
+      color:white;line-height:1.1;font-weight:700;max-width:640px;margin-bottom:16px}
+    .hero h1 em{color:var(--gold);font-style:italic}
+    .hero-line{width:48px;height:2px;background:var(--gold);margin-bottom:20px}
+    .hero p{font-size:16px;color:rgba(255,255,255,0.65);max-width:560px;line-height:1.75;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);
+      color:var(--navy-dark);padding:14px 32px;border-radius:4px;font-weight:700;
+      font-size:15px;text-decoration:none;transition:all .2s}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;
+      border:1.5px solid rgba(255,255,255,0.3);color:white;padding:14px 32px;
+      border-radius:4px;font-weight:500;font-size:15px;text-decoration:none;transition:all .2s}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+    /* COVERAGES */
+    .coverages{padding:80px 8%;background:var(--cream)}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--gold);margin-bottom:12px}
+    .section-title{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);
+      color:var(--navy-dark);line-height:1.2;font-weight:700;margin-bottom:40px}
+    .section-title em{color:var(--gold);font-style:italic}
+    .cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .cov-card{background:var(--white);border:1px solid var(--light-gray);border-radius:8px;
+      padding:28px 24px;transition:all .25s;position:relative;overflow:hidden}
+    .cov-card::after{content:'';position:absolute;bottom:0;left:0;right:0;
+      height:0;background:var(--gold);transition:height .25s}
+    .cov-card:hover::after{height:2px}
+    .cov-card:hover{border-color:rgba(201,168,76,.35);box-shadow:0 6px 28px rgba(27,46,107,.07);transform:translateY(-2px)}
+    .cov-icon{font-size:28px;margin-bottom:12px}
+    .cov-card h4{font-family:var(--font-sans);font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .cov-card p{font-size:13px;color:var(--gray);line-height:1.65}
+
+    /* FAQ */
+    .faq{padding:80px 8%;background:var(--white)}
+    .faq-grid{max-width:760px;margin-top:40px;display:flex;flex-direction:column;gap:12px}
+    .faq-item{border:1px solid var(--light-gray);border-radius:8px;overflow:hidden}
+    .faq-q{width:100%;background:none;border:none;padding:20px 24px;
+      display:flex;justify-content:space-between;align-items:center;
+      font-family:var(--font-sans);font-size:15px;font-weight:600;color:var(--navy);
+      cursor:pointer;text-align:left;transition:background .2s}
+    .faq-q:hover{background:var(--cream)}
+    .faq-q.open{background:var(--navy);color:white}
+    .faq-arr{font-size:18px;flex-shrink:0;margin-left:16px;transition:transform .3s}
+    .faq-q.open .faq-arr{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-a.open{max-height:300px}
+    .faq-a p{padding:16px 24px 20px;font-size:14px;color:var(--gray);line-height:1.7;
+      border-top:1px solid var(--light-gray)}
+
+    /* CTA BAND */
+    .cta-band{background:var(--navy);padding:72px 8%;text-align:center}
+    .cta-band h2{font-family:var(--font-serif);font-size:clamp(26px,3vw,40px);color:white;margin-bottom:14px}
+    .cta-band h2 em{color:var(--gold);font-style:italic}
+    .cta-band p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto}
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);
+      color:var(--navy-dark);padding:15px 36px;border-radius:4px;font-weight:700;
+      font-size:15px;text-decoration:none;transition:all .2s}
+    .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+    /* FOOTER */
+    footer{background:var(--navy-dark);padding:48px 8% 24px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;
+      gap:48px;flex-wrap:wrap;margin-bottom:32px}
+    .footer-brand img{height:90px;object-fit:contain;margin-bottom:12px}
+    .footer-brand p{font-size:12px;color:rgba(255,255,255,.4);max-width:240px;line-height:1.6}
+    .footer-col h5{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--gold);margin-bottom:14px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .footer-col ul a{color:rgba(255,255,255,.45);text-decoration:none;font-size:12px;transition:color .2s}
+    .footer-col ul a:hover{color:white}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;
+      font-size:11px;color:rgba(255,255,255,.2);text-align:center}
+
+    /* MOBILE */
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .cov-grid{grid-template-columns:1fr 1fr}
+      .hero{padding:110px 5% 60px}
+      .coverages,.faq,.cta-band{padding:60px 5%}
+    }
+    @media(max-width:560px){
+      .cov-grid{grid-template-columns:1fr}
+      .hero-btns{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="../index.html"><img src="../logo.png" alt="RUMOSEG"/></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html#produtos">Seguros</a></li>
+    <li><a href="../index.html#sobre">Sobre</a></li>
+    <li><a href="../index.html#seguradoras">Seguradoras</a></li>
+    <li><a href="https://wa.me/51993638605?text=Olá!%20Gostaria%20de%20uma%20cotação" target="_blank" class="nav-cta">Fale Conosco</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-breadcrumb">
+    <a href="../index.html">Início</a>
+    <span>/</span>
+    <a href="../index.html#produtos">Seguros</a>
+    <span>/</span>
+    <strong>Outros Seguros</strong>
+  </div>
+  <div class="hero-eyebrow">Corretora de Seguros</div>
+  <h1>Soluções de proteção para cada necessidade</h1>
+  <div class="hero-line"></div>
+  <p>Além dos produtos mais conhecidos, a RUMOSEG oferece acesso a uma ampla gama de soluções para cobrir situações específicas do seu dia a dia, negócio ou patrimônio. Cotamos em mais de 40 seguradoras.</p>
+  <div class="hero-btns">
+    <a href="https://lojacorr.aggilizador.com.br/rumosegseguros?ref=7464" target="_blank" class="btn-primary">
+      Solicitar cotação online
+    </a>
+    <a href="https://wa.me/51993638605?text=Olá!%20Gostaria%20de%20uma%20cotação" target="_blank" class="btn-outline">
+      Falar com consultor
+    </a>
+  </div>
+</section>
+
+<section class="coverages">
+  <div class="section-label">O que está incluído</div>
+  <h2 class="section-title">Coberturas <em>disponíveis</em></h2>
+  <div class="cov-grid">
+      <div class="cov-card">
+        <div class="cov-icon">🏍️</div>
+        <h4>Seguro Moto</h4>
+        <p>Proteção completa para motos contra roubo, colisão e danos a terceiros.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-icon">🚛</div>
+        <h4>Seguro Caminhão</h4>
+        <p>Cobertura especializada para veículos de carga e transporte.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-icon">⚖️</div>
+        <h4>Responsabilidade Civil</h4>
+        <p>Proteção contra danos causados involuntariamente a terceiros.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-icon">💻</div>
+        <h4>Riscos Cibernéticos</h4>
+        <p>Proteção contra ataques hackers, vazamento de dados e crimes digitais.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-icon">🏭</div>
+        <h4>Seguro Industrial</h4>
+        <p>Coberturas específicas para indústrias e grandes operações.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-icon">📋</div>
+        <h4>Outros Produtos</h4>
+        <p>Consulte-nos — temos acesso a mais de 40 seguradoras e centenas de produtos.</p>
+      </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-label">Dúvidas frequentes</div>
+  <h2 class="section-title">Perguntas sobre <em>Outros Seguros</em></h2>
+  <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Como saber qual seguro preciso?<span class="faq-arr">﹢</span></button>
+        <div class="faq-a"><p>Nossa equipe faz um diagnóstico gratuito das suas necessidades e indica as coberturas mais adequadas para o seu perfil.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Vocês trabalham com seguros corporativos?<span class="faq-arr">﹢</span></button>
+        <div class="faq-a"><p>Sim. Atendemos desde pessoas físicas até grandes empresas, com soluções personalizadas para cada porte e segmento.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Posso cotar vários seguros ao mesmo tempo?<span class="faq-arr">﹢</span></button>
+        <div class="faq-a"><p>Sim. Podemos fazer um levantamento completo das suas necessidades e cotar diferentes produtos simultaneamente.</p></div>
+      </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Pronto para contratar seu <em>Outros Seguros?</em></h2>
+  <p>Cotação gratuita em menos de 5 minutos. Nossa equipe encontra a melhor cobertura para você.</p>
+  <a href="https://lojacorr.aggilizador.com.br/rumosegseguros?ref=7464" target="_blank" class="btn-gold">Fazer cotação agora</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../logo.png" alt="RUMOSEG"/>
+      <p>Corretora de seguros com atendimento humanizado e acesso às melhores seguradoras do Brasil.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Seguros</h5>
+      <ul>
+        <li><a href="seguro-de-carro.html">Seguro de Carro</a></li>
+        <li><a href="seguro-de-vida.html">Seguro de Vida</a></li>
+        <li><a href="seguro-residencial.html">Seguro Residencial</a></li>
+        <li><a href="seguro-empresarial.html">Seguro Empresarial</a></li>
+        <li><a href="seguro-condominio.html">Seguro Condomínio</a></li>
+        <li><a href="seguro-viagem.html">Seguro Viagem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Mais Seguros</h5>
+      <ul>
+        <li><a href="seguro-bike.html">Seguro Bike</a></li>
+        <li><a href="seguro-aluguel.html">Seguro Aluguel</a></li>
+        <li><a href="acidentes-pessoais.html">Acidentes Pessoais</a></li>
+        <li><a href="vida-global.html">Vida Global</a></li>
+        <li><a href="outros-seguros.html">Outros Seguros</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contato</h5>
+      <ul>
+        <li><a href="https://wa.me/51993638605?text=Olá!%20Gostaria%20de%20uma%20cotação" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:contato@rumoseg.com.br">contato@rumoseg.com.br</a></li>
+        <li><a href="../index.html">Página inicial</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 RUMOSEG Corretora de Seguros. Todos os direitos reservados.</div>
+</footer>
+
+<a href="https://wa.me/51993638605?text=Olá!%20Gostaria%20de%20uma%20cotação" style="position:fixed;bottom:28px;right:28px;z-index:200;width:52px;height:52px;
+  border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s"
+  target="_blank" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+function toggleFaq(btn){
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});
+  if(!isOpen){btn.classList.add('open');btn.nextElementSibling.classList.add('open')}
+}
+</script>
+</body>
+</html>
