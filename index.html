@@ -1,12 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RUMOSEG — Corretora de Seguros</title>
-  <meta name="description" content="Corretora de seguros com atendimento humanizado e acessó às melhores seguradoras do Brasil." />
-  <link rel="preçonnect" href="https://fonts.googleapis.com" />
-  <link rel="preçonnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="description" content="Corretora de seguros com atendimento humanizado e acesso às melhores seguradoras do Brasil." />
+  <link rel="icon" type="image/png" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RUMOSEG — Corretora de Seguros" />
+  <meta property="og:description" content="Corretora de seguros com atendimento humanizado e acesso às melhores seguradoras do Brasil." />
+  <meta property="og:image" content="https://rumoseg-nine.vercel.app/og-image.png" />
+  <meta property="og:url" content="https://rumoseg-nine.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RUMOSEG — Corretora de Seguros" />
+  <meta name="twitter:description" content="Corretora de seguros com atendimento humanizado e acesso às melhores seguradoras do Brasil." />
+  <meta name="twitter:image" content="https://rumoseg-nine.vercel.app/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,36 +40,30 @@
 
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-sans); color: #1a1a2e; background: var(--white); overflow-x: hidden; }
+    h1, h2, h3, h4, h5, p, span, a { text-wrap: pretty; }
 
     /* ─── NAVBAR ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.97);
+      background: rgba(13,26,62,0.97);
       backdrop-filter: blur(12px);
       padding: 0 5%;
       display: flex; align-items: center; justify-content: space-between;
-      height: 88px;
-      border-bottom: 1px solid var(--light-gray);
-      box-shadow: 0 1px 20px rgba(27,46,107,0.06);
+      height: 130px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.15);
       overflow: visible;
     }
     .nav-logo {
-      display: flex; align-items: center;
+      display: flex; align-items: center; height: 100%;
     }
-    
-
-    .nav-wordmark {
-      text-decoration: none; display: flex; flex-direction: column; line-height: 1;
+    .nav-logo-img {
+      height: 110px; width: auto; object-fit: contain;
+      display: block;
     }
-    .nav-word-r { font-family: var(--font-sans); font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; }
-    .nav-word-s { font-family: var(--font-sans); font-size: 22px; font-weight: 800; color: var(--gold); letter-spacing: 0.04em; }
-    .nav-word-r, .nav-word-s { display: inline; }
-    .nav-word-sub { font-size: 9px; font-weight: 500; color: var(--gray-light); letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-top: 3px; }
-    .nav-wordmark:hover .nav-word-r { color: var(--navy-dark); }
-    .nav-wordmark:hover .nav-word-s { color: var(--gold-light); }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
-      color: var(--gray); text-decoration: none;
+      color: rgba(255,255,255,0.75); text-decoration: none;
       font-size: 14px; font-weight: 500; letter-spacing: 0.03em;
       transition: color 0.2s; position: relative;
     }
@@ -67,17 +72,17 @@
       height: 2px; background: var(--gold); transform: scaleX(0);
       transition: transform 0.2s; transform-origin: left;
     }
-    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover { color: var(--gold); }
     .nav-links a:hover::after { transform: scaleX(1); }
     .nav-cta {
-      background: var(--navy); color: white !important;
-      padding: 9px 22px; border-radius: 4px; font-weight: 600 !important;
+      background: var(--gold); color: var(--navy-dark) !important;
+      padding: 9px 22px; border-radius: 4px; font-weight: 700 !important;
       letter-spacing: 0.02em; transition: background 0.2s !important;
     }
     .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: var(--gold) !important; color: var(--navy-dark) !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy-dark) !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; }
 
     /* ─── HERO ─── */
     .hero {
@@ -87,7 +92,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       padding: 0 8%;
-      padding-top: 88px;
+      padding-top: 130px;
       position: relative; overflow: hidden;
       gap: 56px;
     }
@@ -343,16 +348,18 @@
     /* ─── SEGURADORAS ─── */
     .seguradoras { background: var(--cream); text-align: center; }
     .seg-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
-      max-width: 860px; margin: 48px auto 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      max-width: 920px; margin: 48px auto 0;
     }
     .seg-logo {
       background: var(--white); border: 1px solid var(--light-gray); border-radius: 8px;
-      padding: 18px 12px; display: flex; align-items: center; justify-content: center;
-      min-height: 64px; transition: all 0.2s;
+      padding: 28px 20px; display: flex; align-items: center; justify-content: center;
+      min-height: 130px; width: 160px; transition: all 0.2s;
       font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase;
     }
     .seg-logo:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); color: var(--gold); }
+    .seg-logo img { max-width: 100%; max-height: 90px; object-fit: contain; filter: grayscale(1) opacity(0.7); transition: filter 0.2s; }
+    .seg-logo:hover img { filter: grayscale(0) opacity(1); }
 
     /* ─── CTA BAND ─── */
     .cta-band {
@@ -431,18 +438,20 @@
 
     /* ─── MOBILE ─── */
     @media (max-width: 960px) {
-      .nav-links { display: none; flex-direction: column; gap: 20px; position: absolute; top: 88px; left: 0; right: 0; background: white; padding: 24px 5%; border-bottom: 1px solid var(--light-gray); box-shadow: 0 8px 24px rgba(27,46,107,0.08); }
+      .nav-links { display: none; flex-direction: column; gap: 20px; position: absolute; top: 130px; left: 0; right: 0; background: white; padding: 24px 5%; border-bottom: 1px solid var(--light-gray); box-shadow: 0 8px 24px rgba(27,46,107,0.08); }
+      .nav-links a { color: var(--gray); }
+      .nav-links a:hover { color: var(--navy); }
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
       section { padding: 64px 5%; }
       .selos-bar { padding: 20px 5%; gap: 24px; }
-      .hero { grid-template-columns: 1fr; padding: 110px 5% 64px; }
+      .hero { grid-template-columns: 1fr; padding: 150px 5% 64px; }
       .hero-photo { display: none; }
       .hero::after { display: none; }
       .why-grid, .trad-grid { grid-template-columns: 1fr; gap: 40px; }
       .why-cards { grid-template-columns: 1fr 1fr; }
       .produtos-grid { grid-template-columns: repeat(3, 1fr); }
-      .seg-grid { grid-template-columns: repeat(3, 1fr); }
+      .seg-logo { width: 140px; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
@@ -450,7 +459,7 @@
       
       .produtos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .why-cards { grid-template-columns: 1fr; }
-      .seg-grid { grid-template-columns: repeat(2, 1fr); }
+      .seg-logo { width: 120px; min-height: 100px; padding: 18px 14px; }
       .footer-grid { grid-template-columns: 1fr; }
       .hero-buttons { flex-direction: column; }
       .btn-primary, }
@@ -461,16 +470,14 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <a href="#inicio" class="nav-wordmark">
-        <span class="nav-word-r">RUMO</span><span class="nav-word-s">SEG</span>
-        <span class="nav-word-sub">Corretora de Seguros</span>
-      </a>
+      <a href="#inicio"><img src="logo.png" alt="RUMOSEG" class="nav-logo-img" /></a>
     </div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="https://lojacorr.aggilizador.com.br/?ref=7464" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"" target="_blank"">Seguros</a></li>
       <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#produtos">Seguros</a></li>
       <li><a href="#seguradoras">Seguradoras</a></li>
-      <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://lojacorr.aggilizador.com.br/rumosegseguros?ref=7464" target="_blank" class="nav-cta">COTAÇÃO GRATUITA</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -526,7 +533,7 @@
   <div class="selos-bar">
     <div class="selo">
       <div class="selo-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <div class="selo-text">5.0 Google<span>Avaliacao dos clientes</span></div>
+      <div class="selo-text">5.0 Google<span>Avaliação dos clientes</span></div>
     </div>
     <div class="selo">
       <div class="selo-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
@@ -534,7 +541,7 @@
     </div>
     <div class="selo">
       <div class="selo-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div class="selo-text">Aténdimento Humanizado<span>Consultor dedicado</span></div>
+      <div class="selo-text">Atendimento Humanizado<span>Consultor dedicado</span></div>
     </div>
     <div class="selo">
       <div class="selo-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -549,20 +556,20 @@
     <p class="section-sub">Nosso compromisso vai além de vender apólices — é garantir que você esteja realmente protegido quando precisar.</p>
     <div class="why-grid">
       <div class="why-cards">
-        <div class="why-card"><div class="why-card-icon">🤝</div><h4>Aténdimento humanizado</h4><p>Cada cliente tem um consultor dedicado. Sem chatbots, sem fila de espera.</p></div>
-        <div class="why-card"><div class="why-card-icon">🔍</div><h4>Total transparencia</h4><p>Explicamos cada cláusula para você não ter surpresas na hora do sinistro.</p></div>
-        <div class="why-card"><div class="why-card-icon">💰</div><h4>Melhores condições</h4><p>Cotamos em +40 seguradoras para garantir o melhor custo-beneficio do mercado.</p></div>
-        <div class="why-card"><div class="why-card-icon">🏆</div><h4>Profissionais qualificados</h4><p>Equipe especializada e registrada na SUSEP com anos de experiencia no setor.</p></div>
-        <div class="why-card"><div class="why-card-icon">🌎</div><h4>Aténdemos todo o Brasil</h4><p>Presenca digital para aténder clientes de qualquer estado com a mesma qualidade.</p></div>
-        <div class="why-card"><div class="why-card-icon">⚡</div><h4>Resolução rápida</h4><p>Se nossó cliente tem um problema, nós ajudamos a resolver. Simples assim.</p></div>
+        <div class="why-card"><div class="why-card-icon">🤝</div><h4>Atendimento humanizado</h4><p>Cada cliente tem um consultor dedicado. Sem chatbots, sem fila de espera.</p></div>
+        <div class="why-card"><div class="why-card-icon">🔍</div><h4>Total transparência</h4><p>Explicamos cada cláusula para você não ter surpresas na hora do sinistro.</p></div>
+        <div class="why-card"><div class="why-card-icon">💰</div><h4>Melhores condições</h4><p>Cotamos em +40 seguradoras para garantir o melhor custo-benefício do mercado.</p></div>
+        <div class="why-card"><div class="why-card-icon">🏆</div><h4>Profissionais qualificados</h4><p>Equipe especializada e registrada na SUSEP com anos de experiência no setor.</p></div>
+        <div class="why-card"><div class="why-card-icon">🌎</div><h4>Atendemos todo o Brasil</h4><p>Presença digital para atender clientes de qualquer estado com a mesma qualidade.</p></div>
+        <div class="why-card"><div class="why-card-icon">⚡</div><h4>Resolução rápida</h4><p>Se nosso cliente tem um problema, nós ajudamos a resolver. Simples assim.</p></div>
       </div>
       <div class="why-panel">
-        <div class="why-panel-tag">Nossa missao</div>
+        <div class="why-panel-tag">Nossa missão</div>
         <h3>Nosso compromisso é com a sua <span style="color:var(--gold)">proteção real</span></h3>
-        <p>Entregamos paz de espirito em forma de seguros. Cada apólice que emitimos é uma promessa de cuidar de quem você ama e do que você construiu.</p>
+        <p>Entregamos paz de espírito em forma de seguros. Cada apólice que emitimos é uma promessa de cuidar de quem você ama e do que você construiu.</p>
         <div class="why-stats">
           <div class="why-stat"><strong>+40</strong><span>Seguradoras parceiras</span></div>
-          <div class="why-stat"><strong>100%</strong><span>Transparencia garantida</span></div>
+          <div class="why-stat"><strong>100%</strong><span>Transparência garantida</span></div>
         </div>
       </div>
     </div>
@@ -578,93 +585,93 @@
       <p style="font-size:14px;color:var(--gray-light);max-width:280px;text-align:right;">Clique no produto e solicite sua cotação agora.</p>
     </div>
         <div class="produtos-grid">
-      <a href="seguros/seguro-de-carro.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-de-carro" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5a2 2 0 0 1-2 2h-2M7 17a2 2 0 0 0 4 0M17 17a2 2 0 0 0 4 0"/><polyline points="9 12 3 12"/><line x1="13" y1="12" x2="13" y2="17"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
         </div>
-        <h4>Seguro de Carro</h4>
+        <h4>Seguro Automóvel</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-de-carro.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-de-moto" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h-3l-3 5H3M10 14l1-3 3 1M15 6l4 5"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M5 18h4l3-6h5l2 3h2"/><path d="M9 12l2-4h3"/></svg>
         </div>
         <h4>Seguro de Moto</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-de-carro.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-de-caminhao" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
         </div>
         <h4>Seguro de Caminhão</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-residencial.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-residencial" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <h4>Seguro Residencial</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-empresarial.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-empresarial" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg>
         </div>
         <h4>Seguro Empresarial</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-condominio.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-condominio" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3l2-4h14l2 4"/><line x1="12" y1="21" x2="12" y2="7"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>
         </div>
         <h4>Seguro Condomínio</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-de-vida.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-de-vida" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
         <h4>Seguro de Vida</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/vida-global.html" target="_blank" class="produto-card">
+      <a href="seguros/vida-global" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a13.5 13.5 0 0 0 0 18 13.5 13.5 0 0 0 0-18"/><path d="M3 12h18"/></svg>
         </div>
         <h4>Seguro Vida Global</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/acidentes-pessoais.html" target="_blank" class="produto-card">
+      <a href="seguros/acidentes-pessoais" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
         <h4>Acidentes Pessoais</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-viagem.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-viagem" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1.5 3 1.5 1.5 3L8 20v-3l3-2 3.4 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg>
         </div>
         <h4>Seguro Viagem</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-bike.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-bike" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M15 6h-3l-3 5H3m7-5l2 5m0-5h3m-3 5l3-5"/><path d="M5.5 14L8 9l4 3"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
         </div>
         <h4>Seguro Bike</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/seguro-aluguel.html" target="_blank" class="produto-card">
+      <a href="seguros/seguro-aluguel" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></svg>
         </div>
         <h4>Seguro Aluguel</h4>
         <span class="arrow">VER MAIS →</span>
       </a>
-      <a href="seguros/outros-seguros.html" target="_blank" class="produto-card">
+      <a href="seguros/outros-seguros" target="_blank" class="produto-card">
         <div class="produto-icon">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>></svg>
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg>
         </div>
         <h4>Outros Seguros</h4>
         <span class="arrow">VER MAIS →</span>
@@ -685,16 +692,16 @@
       <div class="trad-panel">
         <div class="trad-tag">Nossa filosofia</div>
         <h3>Você não precisa mais se preocupar com as <span style="color:var(--gold)">entrelinhas</span></h3>
-        <p>Em seguros, cada diferença de preço tem um motivo. Muitas corretoras alteram detalhes nos seguros apenas para reduzir custos — o que pode resultar em surpresas desagradáveis. Na RUMOSEG, você sabe exatamenté o que está contratando.</p>
-        <a href="https://wa.me/51993638605?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20RUMOSEG" target="_blank">Falar com um consultor →</a>
+        <p>Em seguros, cada diferença de preço tem um motivo. Muitas corretoras alteram detalhes nos seguros apenas para reduzir custos — o que pode resultar em surpresas desagradáveis. Na RUMOSEG, você sabe exatamente o que está contratando.</p>
+        <a href="https://wa.me/51999159416?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20RUMOSEG" target="_blank">Falar com um consultor →</a>
       </div>
       <div class="trad-content">
-        <div class="section-label">Tradicao + Tecnologia</div>
+        <div class="section-label">Tradição + Tecnologia</div>
         <h2>Unimos o melhor do tradicional com o melhor do digital</h2>
-        <p>O mercado digital de seguros carece de consultoria e explicacoes. Na teoria, contratar um seguro sozinho é funcional. Na prática, muitas pessoas contratam coberturas insuficientes.</p>
-        <p>Trazemos a consultoria tradicional alinhada com a fácilidade dos meios digitais.</p>
+        <p>O mercado digital de seguros carece de consultoria e explicações. Na teoria, contratar um seguro sozinho é funcional. Na prática, muitas pessoas contratam coberturas insuficientes.</p>
+        <p>Trazemos a consultoria tradicional alinhada com a facilidade dos meios digitais.</p>
         <div class="trad-items">
-          <div class="trad-item"><div class="trad-item-dot"></div><div><h5>Consultoria especializada</h5><p>Um profissional dedicado que entendé o seu casó antes de indicar qualquer produto.</p></div></div>
+          <div class="trad-item"><div class="trad-item-dot"></div><div><h5>Consultoria especializada</h5><p>Um profissional dedicado que entende o seu caso antes de indicar qualquer produto.</p></div></div>
           <div class="trad-item"><div class="trad-item-dot"></div><div><h5>Agilidade digital</h5><p>Cotação rápida, envio de apólice online e suporte via WhatsApp sempre que precisar.</p></div></div>
           <div class="trad-item"><div class="trad-item-dot"></div><div><h5>Proteção real</h5><p>Coberturas adequadas para que você esteja protegido quando mais precisar.</p></div></div>
         </div>
@@ -706,23 +713,21 @@
   <section class="seguradoras" id="seguradoras">
     <div class="section-label">Nosso portfólio</div>
     <h2 class="section-title">+40 Seguradoras <em>Parceiras</em></h2>
-    <p class="section-sub" style="margin:16px auto 0;text-align:center;">Cotamos nas melhores para você ter sempré a melhor cobertura é o melhor preço.</p>
+    <p class="section-sub" style="margin:16px auto 0;text-align:center;">Cotamos nas melhores para você ter sempre a melhor cobertura e o melhor preço.</p>
     <div class="seg-grid">
-      <div class="seg-logo">Porto Seguro</div>
-      <div class="seg-logo">Bradesco Seguros</div>
-      <div class="seg-logo">SulAmérica</div>
-      <div class="seg-logo">Allianz</div>
-      <div class="seg-logo">Liberty</div>
-      <div class="seg-logo">Tokio Marine</div>
-      <div class="seg-logo">HDI Seguros</div>
-      <div class="seg-logo">Mapfre</div>
-      <div class="seg-logo">Zurich</div>
-      <div class="seg-logo">Berkley</div>
-      <div class="seg-logo">Sompo</div>
-      <div class="seg-logo">Chubb</div>
-      <div class="seg-logo">Itaú Seguros</div>
-      <div class="seg-logo">BB Seguros</div>
-      <div class="seg-logo">Generali</div>
+      <div class="seg-logo"><img src="seguradoras/porto-seguro.png" alt="Porto Seguro" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/bradesco-seguros.png" alt="Bradesco Seguros" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/sulamerica.png" alt="SulAmérica" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/allianz-seguros.png" alt="Allianz" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/liberty-seguros.png" alt="Liberty" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/tokio-marine.png" alt="Tokio Marine" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/hdi-seguros.png" alt="HDI Seguros" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/mapfre-seguros.png" alt="Mapfre" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/zurich-seguros.png" alt="Zurich" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/berkley-seguros.png" alt="Berkley" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/sompo-seguros.png" alt="Sompo" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/chubb.png" alt="Chubb" loading="lazy"/></div>
+      <div class="seg-logo"><img src="seguradoras/itau-seguros.png" alt="Itaú Seguros" loading="lazy"/></div>
     </div>
   </section>
 
@@ -731,7 +736,7 @@
     <div class="section-label">Fale conosco</div>
     <h2>Pronto para proteger o que <em>mais importa?</em></h2>
     <p>Solicite sua cotação agora e receba as melhores opções do mercado em instantes.</p>
-    <a href="https://lojacorr.aggilizador.com.br/rumosegseguros?ref=7464" target="_blank" class="btn-cta-gold" target="_blank">
+    <a href="https://lojacorr.aggilizador.com.br/rumosegseguros?ref=7464" target="_blank" class="btn-cta-gold">
       <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
       Quero uma cotação gratuita
     </a>
@@ -742,61 +747,65 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="logo.png" alt="RUMOSEG" />
-        <p>Corretora de seguros com atendimento humanizado, acessó as melhores seguradoras do Brasil e compromisso com a sua proteção real.</p>
+        <p>Corretora de seguros com atendimento humanizado, acesso às melhores seguradoras do Brasil e compromisso com a sua proteção real.</p>
         <div class="footer-social">
-          <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M16 4H8C5.79 4 4 5.79 4 8v8c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zm-4 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-1.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/></svg></a>
-          <a href="#" class="social-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+          <a href="https://www.instagram.com/rumosegcorretoradeseguros" target="_blank" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M16 4H8C5.79 4 4 5.79 4 8v8c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zm-4 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-1.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/></svg></a>
+          <a href="https://wa.me/51999159416?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o" target="_blank" class="social-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
         <h5>Seguros</h5>
         <ul>          
-          <li><a href="seguros/seguro-de-carro.html">Seguro de Carro</a></li>
+          <li><a href="seguros/seguro-de-carro">Seguro Automóvel</a></li>
+
+          <li><a href="seguros/seguro-de-moto">Seguro de Moto</a></li>
+
+          <li><a href="seguros/seguro-de-caminhao">Seguro de Caminhão</a></li>
+
+          <li><a href="seguros/seguro-de-vida">Seguro de Vida</a></li>
           
-          <li><a href="seguros/seguro-de-vida.html">Seguro de Vida</a></li>
+          <li><a href="seguros/seguro-residencial">Seguro Residencial</a></li>
           
-          <li><a href="seguros/seguro-residencial.html">Seguro Residencial</a></li>
+          <li><a href="seguros/seguro-empresarial">Seguro Empresarial</a></li>
           
-          <li><a href="seguros/seguro-empresarial.html">Seguro Empresarial</a></li>
+          <li><a href="seguros/seguro-condominio">Seguro Condomínio</a></li>
           
-          <li><a href="seguros/seguro-condominio.html">Seguro Condomínio</a></li>
+          <li><a href="seguros/seguro-viagem">Seguro Viagem</a></li>
           
-          <li><a href="seguros/seguro-viagem.html">Seguro Viagem</a></li>
+          <li><a href="seguros/seguro-bike">Seguro Bike</a></li>
           
-          <li><a href="seguros/seguro-bike.html">Seguro Bike</a></li>
+          <li><a href="seguros/seguro-aluguel">Seguro Aluguel</a></li>
           
-          <li><a href="seguros/seguro-aluguel.html">Seguro Aluguel</a></li>
+          <li><a href="seguros/acidentes-pessoais">Acidentes Pessoais</a></li>
           
-          <li><a href="seguros/acidentes-pessoais.html">Acidentes Pessoais</a></li>
-          
-          <li><a href="seguros/vida-global.html">Vida Global</a></li></ul>
+          <li><a href="seguros/vida-global">Vida Global</a></li></ul>
       </div>
       <div class="footer-col">
         <h5>Empresa</h5>
         <ul>
           <li><a href="#sobre">Sobre a RUMOSEG</a></li>
           <li><a href="#seguradoras">Seguradoras Parceiras</a></li>
-          <li><a href="https://wa.me/51993638605?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor" target="_blank">Fale Conosco</a></li>
-          <li><a href="seguros/outros-seguros.html">Outros Seguros</a></li>
+          <li><a href="https://wa.me/51999159416?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor" target="_blank">Fale Conosco</a></li>
+          <li><a href="seguros/outros-seguros">Outros Seguros</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Contato</h5>
         <div class="footer-contact">
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+55 (51) 9363-8605</div>
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>contato@rumoseg.com.br</div>
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Brasil — Aténdimento Nacional</div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+55 (51) 99915-9416</div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>atendimento@rumosegseguros.com.br</div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Brasil — Atendimento Nacional</div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 RUMOSEG Corretora de Seguros. Todos os direitos reservados. CNPJ: 00.000.000/0001-00</span>
+      <span>© 2026 RUMOSEG Corretora de Seguros. Todos os direitos reservados. CNPJ: 66.986.424/0001-85</span>
       <span style="color:rgba(255,255,255,0.2);font-size:11px;">SUSEP Habilitada</span>
     </div>
   </footer>
 
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/51993638605?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <a href="https://wa.me/51999159416?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
   </a>
 
